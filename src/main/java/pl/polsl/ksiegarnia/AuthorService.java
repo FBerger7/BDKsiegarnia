@@ -1,11 +1,12 @@
 package pl.polsl.ksiegarnia;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@ComponentScan
 public class AuthorService {
 
     @Autowired
@@ -18,9 +19,9 @@ public class AuthorService {
                         rs.getString("first_name"), rs.getString("last_name")));
     }
 
-    public void update(Author customer) {
+    public void update(Author author) {
         jdbcTemplate.update(
                 "UPDATE customers SET first_name=?, last_name=? WHERE id=?",
-                customer.getFirstName(), customer.getLastName(), customer.getId());
+                author.getFirstName(), author.getLastName(), author.getId());
     }
 }
