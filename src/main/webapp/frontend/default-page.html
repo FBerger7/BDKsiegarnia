@@ -2,7 +2,9 @@
 <link rel="import" href="bower_components/vaadin-button/src/vaadin-button.html">
 <link rel="import" href="bower_components/vaadin-ordered-layout/src/vaadin-horizontal-layout.html">
 <link rel="import" href="bower_components/vaadin-text-field/src/vaadin-text-field.html">
-<link rel="import" href="bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="bower_components/vaadin-icons/vaadin-icons.html">
+<link rel="import" href="bower_components/vaadin-ordered-layout/src/vaadin-vertical-layout.html">
+<link rel="import" href="bower_components/vaadin-app-layout/src/vaadin-app-layout.html">
 
 <dom-module id="default-page">
     <template>
@@ -11,21 +13,30 @@
                 display: block;
             }
         </style>
-<vaadin-horizontal-layout style="width: 100%; justify-content: center;" theme="spacing padding" id="vaadinHorizontalLayout">
- <vaadin-button theme="icon" aria-label="Add new" id="homeButton">
-  <iron-icon icon="lumo:BOOK" id="ironIcon"></iron-icon>
- </vaadin-button>
- <vaadin-text-field style="width: 400px; margin-left: 50px; margin-right: 10px; flex-grow: 1;" id="vaadinTextField"></vaadin-text-field>
- <vaadin-button theme="contained" style="width: 100px; margin-left: 10px; margin-right: 50px;" id="searchButton">
-   Search 
- </vaadin-button>
- <vaadin-button theme="contained" style="width: 100px; margin-left: 50px; margin-right: 50px;" id="profileButton">
-   Profile 
- </vaadin-button>
- <vaadin-button theme="contained" style="width: 100px; margin-left: 50px; margin-right: 50px;" id="cartButton">
-   Cart 
- </vaadin-button>
-</vaadin-horizontal-layout>
+<vaadin-app-layout id="windowLayout" style="width: 100%; height: 100%;">
+ <vaadin-horizontal-layout style="width: 100%; justify-content: center; border-style: groove; " theme="spacing padding" id="topPanel">
+  <vaadin-horizontal-layout id="vaadinHorizontalLayout1" style="width: 100%; margin: auto;">
+   <vaadin-button theme="icon" aria-label="Add new" id="homeButton" style="margin-left: 40px;  ">
+    <a router-link href="Profile"></a>
+   </vaadin-button>
+   <vaadin-text-field style="width: 400px; margin-left: 50px; margin-right: 10px;flex-grow: 1;" id="vaadinTextField"></vaadin-text-field>
+   <vaadin-button theme="contained" style="width: 100px; margin-left: 10px; margin-right: 50px;" id="searchButton">
+     Search 
+   </vaadin-button>
+   <vaadin-button theme="contained" style="width: 100px; margin-left: 50px; margin-right: 50px;" id="profileButton">
+     Profile 
+   </vaadin-button>
+   <vaadin-button theme="contained" style="width: 100px; margin-left: 50px; margin-right: 50px;" id="cartButton">
+     Cart 
+   </vaadin-button>
+  </vaadin-horizontal-layout>
+ </vaadin-horizontal-layout>
+ <vaadin-vertical-layout theme="spacing" id="leftPanel" style="height: 100%; width: 20%; border-style: groove; ">
+  <vaadin-vertical-layout theme="spacing" id="leftPanelInside" style="margin: auto; ">
+   <label id="label">Kategorie</label>
+  </vaadin-vertical-layout>
+ </vaadin-vertical-layout>
+</vaadin-app-layout>
 </template>
 
     <script>

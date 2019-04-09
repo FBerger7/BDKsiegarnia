@@ -121,6 +121,16 @@
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
 		</dependency>
+		<dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin-icons-flow</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.github.appreciated</groupId>
+			<artifactId>material</artifactId>
+			<version>LATEST</version>
+		</dependency>
+
 
 	</dependencies>
 

@@ -1,0 +1,33 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/vaadin-app-layout/src/vaadin-app-layout.html">
+<link rel="import" href="bower_components/vaadin-button/src/vaadin-button.html">
+
+<dom-module id="profile-page">
+    <template>
+<style include="shared-styles">
+            :host {
+                display: block;
+            }
+        </style>
+<vaadin-app-layout id="vaadinAppLayout">
+ <vaadin-button theme="contained" id="backButton">
+  GO BACK
+ </vaadin-button>
+</vaadin-app-layout>
+</template>
+
+    <script>
+        class ProfilePage extends Polymer.Element {
+            static get is() {
+                return 'profile-page';
+            }
+
+            static get properties() {
+                return {
+                    // Declare your properties here.
+                };
+            }
+        }
+        customElements.define(ProfilePage.is, ProfilePage);
+    </script>
+</dom-module>
